@@ -9,6 +9,7 @@ const client = new Client();
 const prefix = "c!";
 const jardimCategory = "Jardins Privados";
 const endCategory = "Fim do Mundo";
+const token = "NzIzMTgwNDY1NzI4NTIwMzc0.Xut4Sw.q2KFc7toR77ncz-1ZrH0lSLhvR4";
 
 client.once("ready", () => {
   console.log("Ready!");
@@ -124,4 +125,4 @@ client.on("message", async (message) => {
   }
 });
 
-client.login("NzIzMTgwNDY1NzI4NTIwMzc0.Xut4Sw.q2KFc7toR77ncz-1ZrH0lSLhvR4");
+client.login(token);
