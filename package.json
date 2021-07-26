@@ -1,0 +1,21 @@
+{
+  "name": "cavalo-bot",
+  "version": "1.0.0",
+  "description": "cavalo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "^12.5.3",
+    "node-fetch": "^2.6.1",
+    "node-html-parser": "^1.2.21",
+    "request": "^2.88.2",
+    "sequelize": "^5.22.4",
+    "sqlite3": "^5.0.2",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
