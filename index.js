@@ -30,11 +30,15 @@ client.on("guildMemberAdd",  (member) => {
           channel.overwritePermissions([
             {
                 id: member.id,
-                allow: ['VIEW_CHANNEL', 'MANAGE_MESSAGES', 'ATTACH_FILES', 'EMBED_LINKS', 'SEND_TTS_MESSAGES', 'USE_EXTERNAL_EMOJIS', 'MANAGE_CHANNELS'],
+                allow: ['MANAGE_ROLES','VIEW_CHANNEL', 'MANAGE_MESSAGES', 'ATTACH_FILES', 'EMBED_LINKS', 'SEND_TTS_MESSAGES', 'USE_EXTERNAL_EMOJIS', 'MANAGE_CHANNELS'],
             },
             {
               id: member.guild.roles.everyone,
               deny: ['MANAGE_MESSAGES', 'ATTACH_FILES', 'EMBED_LINKS', 'SEND_TTS_MESSAGES', 'MANAGE_CHANNELS']
+            },
+            {
+              id: '869273588623101983',
+              deny: ['SEND_MESSAGES','VIEW_CHANNEL']
             }
           ]);
           create_user(member.id, channel.id);
@@ -47,8 +51,17 @@ client.on("guildMemberAdd",  (member) => {
         channel.send(`${member} bem vindo de volta`);
         channel.overwritePermissions([
           {
+              id: member.id,
+              allow: ['MANAGE_ROLES','VIEW_CHANNEL', 'MANAGE_MESSAGES', 'ATTACH_FILES', 'EMBED_LINKS', 'SEND_TTS_MESSAGES', 'USE_EXTERNAL_EMOJIS', 'MANAGE_CHANNELS'],
+          },
+          {
             id: member.guild.roles.everyone,
-            allow: ['SEND_MESSAGES']
+            allow: ['SEND_MESSAGES'],
+            deny: ['MANAGE_MESSAGES', 'ATTACH_FILES', 'EMBED_LINKS', 'SEND_TTS_MESSAGES', 'MANAGE_CHANNELS']
+          },
+          {
+            id: '869273588623101983',
+            deny: ['SEND_MESSAGES','VIEW_CHANNEL']
           }
         ]);
         let category = member.guild.channels.cache.find(c => c.name == jardimCategory && c.type == "category");
